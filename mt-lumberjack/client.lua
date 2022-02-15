@@ -1,10 +1,5 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
---[[RegisterNetEvent('mt-lumberjack:client:CortarTroncos', function()
-    local dict = loadDict('melee@hatchet@streamed_core')
-    TaskPlayAnim(PlayerPedId(), dict, 'plyr_rear_takedown_b', 8.0, -8.0, -1, 2, 0, false, false, false)
-end)]]
-
 -- Evento para cortar os troncos das arvores
 RegisterNetEvent('mt-lumberjack:client:CortarTroncos')
 AddEventHandler("mt-lumberjack:client:CortarTroncos", function()
