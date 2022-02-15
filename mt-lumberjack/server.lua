@@ -7,7 +7,7 @@ AddEventHandler("mt-lumberjack:server:DarTroncos", function()
     local Player = QBCore.Functions.GetPlayer(src)
         Player.Functions.AddItem("tronco", 1)
         TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["tronco"], "add")
-        TriggerClientEvent('QBCore:Notify', src, 'Cortas-te os Troncos.')
+        TriggerClientEvent('QBCore:Notify', src, 'Cut your trunks.')
 end)
     
 -- Evento para processar tronco
@@ -24,10 +24,10 @@ AddEventHandler("mt-lumberjack:server:DarTabuas", function()
             TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["tabuas"], "add")
             TriggerClientEvent('QBCore:Notify', src, 'tronco processadas.')
         else
-            TriggerClientEvent('QBCore:Notify', src, 'Não tens os items corretos...', 'error')
+            TriggerClientEvent('QBCore:Notify', src, 'Wrong Items...', 'error')
         end
     else
-        TriggerClientEvent("QBCore:Notify", src, "Falta-te algo...", "error")
+        TriggerClientEvent("QBCore:Notify", src, "Missing something...", "error")
     end
 end)
 
@@ -43,10 +43,10 @@ RegisterNetEvent('mt-lumberjack:server:VenderTabuas', function(args)
 			Player.Functions.RemoveItem("tabuas", 1, k)
 			Player.Functions.AddMoney('bank', payment , "tabuas-sell")
 			TriggerClientEvent('inventory:client:ItemBox', source, QBCore.Shared.Items["tabuas"], "remove", 1)
-			TriggerClientEvent('QBCore:Notify', src, "1 "..source.." vendido por $"..payment, "success")
+			TriggerClientEvent('QBCore:Notify', src, "1 "..source.." sell for $"..payment, "success")
 			TriggerClientEvent("mt-drugdealer:client:venda", source)
 		else
-		    TriggerClientEvent('QBCore:Notify', src, "Não tens nada para vender", "error")
+		    TriggerClientEvent('QBCore:Notify', src, "You dont have anything to sell", "error")
         end 
     end
 end)
