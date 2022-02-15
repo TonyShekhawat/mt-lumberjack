@@ -1,10 +1,11 @@
 # mt-lumberjack
-QBCore lumberjack job using qb-target and qb-menu
+QBCore lumberjack job using qb-target, qb-menu and qb-lock
 
 # Dependencies
 
 qb-target: https://github.com/BerkieBb/qb-target
 qb-menu: https://github.com/qbcore-framework/qb-menu
+qb-lock: https://github.com/M-Middy/qb-lock
 
 # add to shared.lua file
 
