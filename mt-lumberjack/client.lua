@@ -9,14 +9,14 @@ Citizen.CreateThread(function()
 	SetBlipAsShortRange(blip, true)
 	SetBlipColour(blip, 3)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Fabrica de madeira") -- Mudar nome do Blip aqui!
+	AddTextComponentSubstringPlayerName("Lumberjack") -- Mudar nome do Blip aqui!
     EndTextCommandSetBlipName(blip)
 end)
 
 -- Evento para cortar os troncos das arvores
 RegisterNetEvent('mt-lumberjack:client:CortarTroncos')
 AddEventHandler("mt-lumberjack:client:CortarTroncos", function()
-    QBCore.Functions.Progressbar("troncos", "A CORTAR TRONCOS DE ARVORE", 500, false, true, {
+    QBCore.Functions.Progressbar("troncos", "CUTTING TREE TRUNKS", 500, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -33,7 +33,7 @@ AddEventHandler("mt-lumberjack:client:CortarTroncos", function()
         TriggerServerEvent("mt-lumberjack:server:DarTroncos")
         ClearPedTasks(playerPed)
     else
-        QBCore.Functions.Notify("Falhado!", "error")
+        QBCore.Functions.Notify("Failed!", "error")
         ClearPedTasks(playerPed)
         end
     end)
@@ -51,7 +51,7 @@ Citizen.CreateThread(function ()
                 type = "Client",
                 event = "mt-lumberjack:client:CortarTroncos",
                 icon = "fas fa-axe",
-                label = "Cortar Tronco",
+                label = "Cut Trunks",
             },
         },
         distance = 2.5
@@ -70,7 +70,7 @@ Citizen.CreateThread(function ()
                 type = "Client",
                 event = "mt-lumberjack:client:ProcessarTabuas",
                 icon = "fas fa-axe",
-                label = "Cortar Tronco",
+                label = "Process Trunks",
             },
         },
         distance = 2.5
@@ -80,7 +80,7 @@ end)
 -- Evento para processar madeira
 RegisterNetEvent('mt-lumberjack:client:ProcessarTabuas')
 AddEventHandler("mt-lumberjack:client:ProcessarTabuas", function()
-    QBCore.Functions.Progressbar("troncos", "A PROCESSAR TABUAS", 500, false, true, {
+    QBCore.Functions.Progressbar("troncos", "PROCESSING BOARDS", 500, false, true, {
         disableMovement = true,
         disableCarMovement = true,
         disableMouse = false,
@@ -127,7 +127,7 @@ Citizen.CreateThread(function ()
                 type = "Client",
                 event = "mt-lumberjack:client:VenderTabuas",
                 icon = "fas fa-axe",
-                label = "Falar com o Comprador",
+                label = "Talk with employee",
             },
         },
         distance = 2.5
@@ -139,12 +139,12 @@ RegisterNetEvent('mt-lumberjack:client:VenderTabuas')
 AddEventHandler('mt-lumberjack:client:VenderTabuas', function()
     exports['qb-menu']:openMenu({
 		{
-            header = "Comrpador de Tabuas",
+            header = "Board Employee",
             isMenuHeader = true
         },
         { -- copiar daqui
-            header = "Vender Tábuas de Madeira",
-            txt = "Preço atual: 2 cada",
+            header = "Sell Boards",
+            txt = "Price: 2$",
             params = {
 				isServer = true,
                 event = "mt-lumberjack:server:VenderTabuas",
@@ -152,7 +152,7 @@ AddEventHandler('mt-lumberjack:client:VenderTabuas', function()
             }
         },		-- até aqui, colar logo aqui em baixo		
         {
-            header = "< Fechar",
+            header = "< Close",
             txt = "",
             params = {
                 event = "qb-menu:closeMenu"
