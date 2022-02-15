@@ -1,7 +1,7 @@
-# mt-lumberjack
+# mt-lumberjack:
 QBCore lumberjack job using qb-target, qb-menu and qb-lock
 
-# Dependencies
+# Dependencies:
 
 qb-target: https://github.com/BerkieBb/qb-target
 qb-menu: https://github.com/qbcore-framework/qb-menu
