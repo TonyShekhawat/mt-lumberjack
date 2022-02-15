@@ -1,5 +1,18 @@
 local QBCore = exports['qb-core']:GetCoreObject()
 
+-- Criar blip para do mapa
+Citizen.CreateThread(function()
+    local blip = AddBlipForCoord(2298.27, 5140.95, 52.49) -- Mudar coordenadas do blip aqui!
+	SetBlipSprite(blip, 113) -- Mudar estilo do blip aqui!
+	SetBlipDisplay(blip, 4)
+	SetBlipScale(blip, 0.7)
+	SetBlipAsShortRange(blip, true)
+	SetBlipColour(blip, 3)
+	BeginTextCommandSetBlipName("STRING")
+	AddTextComponentSubstringPlayerName("Fabrica de madeira") -- Mudar nome do Blip aqui!
+    EndTextCommandSetBlipName(blip)
+end)
+
 -- Evento para cortar os troncos das arvores
 RegisterNetEvent('mt-lumberjack:client:CortarTroncos')
 AddEventHandler("mt-lumberjack:client:CortarTroncos", function()
